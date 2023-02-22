@@ -1,9 +1,9 @@
 const ContactPage = ({
-    style, 
-    setStyle
+    contactStyle, 
+    setContactStyle
 })=>{
     return (
-        <div className={`${style}`}>
+        <div className={`${contactStyle}`}>
             Hola desde Contact
         </div>
     )

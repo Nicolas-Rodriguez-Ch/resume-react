@@ -1,16 +1,56 @@
+import { render } from '@testing-library/react'
 import './HeaderComponent.css'
-import { useState } from "react";
 
 const Header_component = ({
-    style, 
-    setStyle,
-    renderFunction
+    aboutStyle, 
+    setAboutStyle,
+    portfolioStyle,
+    setPortfolioStyle,
+    contactStyle,
+    setContactStyle
 }) => {
 
-    const clickHandler = () => {
-        setStyle('render__contact');
-        console.log('click')
+    const aboutClickHandler = () => {
+        // aboutStyle === 'none' ? setAboutStyle('render') : setAboutStyle('none');
+        // portfolioStyle === 'none' ? setPortfolioStyle('render') : setPortfolioStyle('none');
+        if(aboutStyle === 'none'){
+            setAboutStyle('render');
+            setContactStyle('none');
+            setPortfolioStyle('none');
+        } else if (aboutStyle === 'render'){
+            setPortfolioStyle('render');
+            setContactStyle('none');
+            setAboutStyle('none');
+        }
     }
+    const portfolioClickHandler = () => {
+        // portfolioStyle === 'none' ? setPortfolioStyle('render') : setPortfolioStyle('none');
+        // aboutStyle === 'none' ? setAboutStyle('render') : setAboutStyle('none');
+        if (portfolioStyle === 'none') {
+            setPortfolioStyle('render');
+            setContactStyle('none');
+            setAboutStyle('none');
+        } else if (portfolioStyle === 'render') {
+            setPortfolioStyle('none');
+            setContactStyle('none');
+            setAboutStyle('render')
+        }
+    }
+    const contactClickHandler = () => {
+        // contactStyle === 'none' ? setContactStyle('render') : setContactStyle('none');
+        // portfolioStyle === 'none' ? setPortfolioStyle('render') : setPortfolioStyle('none');
+
+        if (contactStyle === 'none') {
+            setAboutStyle('none');
+            setPortfolioStyle('none');
+            setContactStyle('render');
+        } else if(contactStyle=== 'render') {
+            setAboutStyle('render');
+            setPortfolioStyle('none');
+            setContactStyle('none')
+        }
+    }
+
     return(
         <article className='header'>
             <p>
@@ -24,14 +64,18 @@ const Header_component = ({
                     </a>
                 </b>
             </p>
-            <p>
+            <p
+                onClick={aboutClickHandler}
+            >
                 About
             </p>
-            <p>
+            <p
+                onClick={portfolioClickHandler}
+            >
                 Portfolio
             </p>
             <p 
-                onClick={clickHandler}
+                onClick={contactClickHandler}
             >
                 Contact
             </p>

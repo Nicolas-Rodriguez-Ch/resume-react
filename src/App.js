@@ -1,35 +1,34 @@
 import './App.css';
 import HeaderComponent from './components/HeaderComponent/HeaderComponent';
-import AboutPage from './components/AboutPage/AboutPage'
+import AboutPage from './components/AboutPage/AboutPage';
 import PortfolioPage from './components/PorfolioPage/PorffolioPage';
 import ContactPage from './components/ContactPage/ContactPage';
 import { useState } from 'react';
 
 
 function App() {
-  const [style, setStyle] = useState('none');
+  const [aboutStyle, setAboutStyle] = useState('');
+  const [portfolioStyle, setPortfolioStyle] = useState('none');
+  const [contactStyle, setContactStyle] = useState('none');
 
-  const renderFunction = () => {
-    setStyle('none');
-  }
   return (
     <div className="App">
       <HeaderComponent 
-        renderFunction = {renderFunction}
-        style = {style}
-        setStyle = {setStyle}
+        aboutStyle = {aboutStyle}
+        setAboutStyle = {setAboutStyle}
+        portfolioStyle = {portfolioStyle}
+        setPortfolioStyle = {setPortfolioStyle}
+        contactStyle = {contactStyle}
+        setContactStyle = {setContactStyle}
       />
       <AboutPage 
-        style = {style}
-        setStyle = {setStyle}
+        aboutStyle = {aboutStyle}
       />
       <PortfolioPage 
-        style = {style}
-        setStyle = {setStyle}
+        portfolioStyle = {portfolioStyle}
       />
       <ContactPage 
-        style = {style}
-        setStyle = {setStyle}
+        contactStyle = {contactStyle}
       />
     </div>
   );

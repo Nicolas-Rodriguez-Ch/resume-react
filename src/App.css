@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  
 }
 
 a {
@@ -12,10 +12,9 @@ a {
 }
 
 .none {
-  display: none;
+  display: none !important;
 }
 
-.render__contact {
+.render {
   display: flex;
-  background-color: blue;
 }
