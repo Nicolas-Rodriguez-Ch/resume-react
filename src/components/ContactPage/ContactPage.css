@@ -1,0 +1,12 @@
+.contactPage__icons {
+    margin-right: 5px;
+    width: 3vh;
+    height: 3vh;
+    color: gold;
+}
+
+.contactPage__listedItem:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    color: purple;
+}
